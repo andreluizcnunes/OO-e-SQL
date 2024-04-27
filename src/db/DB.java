@@ -15,7 +15,8 @@ public class DB {
             try {
                 Properties properties = loadProperties();
                 String url = properties.getProperty("dburl");
-                conn = DriverManager.getConnection(url, properties);
+                conn = DriverManager.getConnection(url, properties.getProperty("user"), properties.getProperty("password"));
+
             }catch (SQLException e) {
                 throw new DbException(e.getMessage());
             }
