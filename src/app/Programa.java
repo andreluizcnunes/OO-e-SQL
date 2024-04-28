@@ -12,7 +12,17 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Esta classe contém o programa principal para analisar dados de pedidos e produtos do banco de dados.
+ */
 public class Programa {
+
+    /**
+     * O método principal que inicia a execução do programa.
+     *
+     * @param args Os argumentos de linha de comando (não utilizados neste programa).
+     * @throws SQLException Se ocorrer um erro ao interagir com o banco de dados.
+     */
     public static void main(String[] args) throws SQLException {
 
         try(Connection conn = DB.getConnection();
@@ -51,6 +61,13 @@ public class Programa {
         }
     }
 
+    /**
+     * Método auxiliar para instanciar um objeto Order a partir dos resultados do ResultSet.
+     *
+     * @param rs O ResultSet contendo os dados do pedido.
+     * @return O objeto Order instanciado.
+     * @throws SQLException Se ocorrer um erro ao acessar os dados do ResultSet.
+     */
     private static Order instantiateOrder(ResultSet rs) throws SQLException {
         Order order = new Order();
         order.setId(rs.getLong("order_id"));
@@ -62,6 +79,13 @@ public class Programa {
         return order;
     }
 
+    /**
+     * Método auxiliar para instanciar um objeto Product a partir dos resultados do ResultSet.
+     *
+     * @param rs O ResultSet contendo os dados do produto.
+     * @return O objeto Product instanciado.
+     * @throws SQLException Se ocorrer um erro ao acessar os dados do ResultSet.
+     */
     public static Product instantiateProduct(ResultSet rs) throws SQLException {
         Product product = new Product();
         product.setId(rs.getLong("product_id"));

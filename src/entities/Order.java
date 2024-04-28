@@ -4,6 +4,10 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * A classe Order representa um pedido em um sistema.
+ */
 public class Order {
     private Long id;
     private Double latitude;
@@ -11,14 +15,24 @@ public class Order {
     private Instant moment;
     private OrderStatus status;
 
+    // A lista de produtos no pedido
     private List<Product> products = new ArrayList<>();
 
 
-
+    /**
+     * Obtém o identificador único do pedido.
+     *
+     * @return O identificador único do pedido.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Define o identificador único do pedido.
+     *
+     * @param id O identificador único do pedido.
+     */
     public void setId(Long id) {
         this.id = id;
     }
@@ -63,6 +77,12 @@ public class Order {
         this.products = products;
     }
 
+
+    /**
+     * Retorna uma representação em formato de String do objeto Order.
+     *
+     * @return Uma representação em formato de String do objeto Order.
+     */
     @Override
     public String toString() {
         return "Order{" +

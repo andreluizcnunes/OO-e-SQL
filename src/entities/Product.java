@@ -1,5 +1,8 @@
 package entities;
 
+/**
+ * A classe Product representa um produto em um sistema.
+ */
 public class Product {
 
     private Long id;
@@ -8,9 +11,21 @@ public class Product {
     private String description;
     private String imageUrl;
 
+    /**
+     * Construtor padrão da classe Product.
+     */
     public Product() {
     }
 
+    /**
+     * Construtor da classe Product com todos os campos.
+     *
+     * @param id          O identificador único do produto.
+     * @param name        O nome do produto.
+     * @param price       O preço do produto.
+     * @param description A descrição do produto.
+     * @param imageUrl    A URL da imagem do produto.
+     */
     public Product(Long id, String name, Double price, String description, String imageUrl) {
         this.id = id;
         this.name = name;
@@ -19,10 +34,20 @@ public class Product {
         this.imageUrl = imageUrl;
     }
 
+    /**
+     * Obtém o identificador único do produto.
+     *
+     * @return O identificador único do produto.
+     */
     public Long getId() {
         return id;
     }
 
+    /**
+     * Define o identificador único do produto.
+     *
+     * @param id O identificador único do produto.
+     */
     public void setId(Long id) {
         this.id = id;
     }
@@ -59,6 +84,11 @@ public class Product {
         this.imageUrl = imageUrl;
     }
 
+    /**
+     * Retorna uma representação em formato de String do objeto Product.
+     *
+     * @return Uma representação em formato de String do objeto Product.
+     */
     @Override
     public String toString() {
         return "Product{" +
